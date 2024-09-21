@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import scrollimage from '../../public/assets/images/titlecomunime.png';
+---
+
+<Layout title="Comuni.Me">
+	<main>
+		<section id="section1" class="section">
+			<div class="image-container">
+				<img src={scrollimage.src} alt="Image" class="centered-image" />
+			</div>
+			<!-- <h1>Bienvenido a <span class="text-gradient">Comuni.Me</span></h1> -->
+		</section>
+
+		<section id="section2" class="section">
+			<h2>Descripción</h2>
+			<p>Contenido sobre que es ComuniMe</p>
+			<ul role="list" class="link-card-grid">
+				<Card
+					href=""
+					title="Descripción General de ComuniMe"
+					body="ComuniMe es una innovadora aplicación de traducción de lenguaje de señas diseñada para facilitar la comunicación inclusiva entre personas con discapacidad auditiva y aquellos que no conocen el lenguaje de señas."
+				/>
+				<Card
+					href=""
+					title="Funcionalidades Principales"
+					body="La aplicación ComuniMe ofrece una variedad de funcionalidades clave que optimizan la experiencia de usuario. Entre estas, destaca la capacidad de unirse a salas privadas generadas para cada sesión de traducción, garantizando la privacidad y seguridad de la comunicación."
+				/>
+				<Card
+					href=""
+					title="Tecnología y Arquitectura"
+					body="ComuniMe está construida sobre un sólido marco tecnológico que combina varias herramientas avanzadas. Utiliza Flutter para desarrollar una interfaz de usuario intuitiva y fluida en dispositivos móviles, permitiendo una experiencia nativa tanto en Android como en iOS. En el backend, la aplicación se apoya en Socket.IO para gestionar la comunicación en tiempo real entre expresantes e intérpretes, asegurando una interacción eficiente y sin interrupciones."
+				/>
+				<Card
+					href=""
+					title="Impacto Social y Aceptación"
+					body="El impacto de ComuniMe en la sociedad es significativo, ya que aborda una necesidad crítica en la comunidad de personas sordas. Al ofrecer una solución accesible y efectiva para la traducción de lenguaje de señas, la aplicación no solo mejora la comunicación entre personas con y sin discapacidad auditiva, sino que también contribuye a la integración social y profesional de estos grupos."
+				/>
+			</ul>
+		</section>
+
+		<section id="section3" class="section">
+			<h2>Descargame</h2>
+			<p>Contenido de la tercera sección.</p>
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+	margin: auto;
+	width: 100%;
+	color: white;
+	font-size: 20px;
+	line-height: 1.6;
+}
+
+.section {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	scroll-snap-align: start;
+}
+
+.image-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.centered-image {
+	max-width: 100%;
+	height: auto;
+}
+
+h1, h2 {
+	font-size: 4rem;
+	font-weight: 700;
+	line-height: 1;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.text-gradient {
+	background-image: var(--accent-gradient);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: 400%;
+	background-position: 0%;
+}
+
+.instructions {
+	margin-bottom: 2rem;
+	border: 1px solid rgba(var(--accent-light), 25%);
+	background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+	padding: 1.5rem;
+	border-radius: 8px;
+}
+
+.instructions code {
+	font-size: 0.8em;
+	font-weight: bold;
+	background: rgba(var(--accent-light), 12%);
+	color: rgb(var(--accent-light));
+	border-radius: 4px;
+	padding: 0.3em 0.4em;
+}
+
+.instructions strong {
+	color: rgb(var(--accent-light));
+}
+
+.link-card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Reducir tamaño mínimo a 200px */
+	gap: 2rem;
+	padding: 0;
+	width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+	max-width: 1200px; /* Limita el ancho máximo del contenedor para mejor visualización en pantallas grandes */
+	margin: auto; /* Centra el contenedor si el ancho máximo es menor que la pantalla */
+}
+
+
+</style>
